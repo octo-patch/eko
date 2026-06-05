@@ -20,7 +20,7 @@ describe("MiniMax provider unit tests", () => {
     const llms: LLMs = {
       default: {
         provider: "minimax",
-        model: "MiniMax-M2.7",
+        model: "MiniMax-M3",
         apiKey: "test-key",
       },
     };
@@ -31,7 +31,7 @@ describe("MiniMax provider unit tests", () => {
     const llms: LLMs = {
       default: {
         provider: "minimax",
-        model: "MiniMax-M2.5",
+        model: "MiniMax-M3",
         apiKey: "test-key",
         config: {
           baseURL: "https://custom-proxy.example.com/v1",
@@ -48,7 +48,7 @@ describe("MiniMax provider unit tests", () => {
     const llms: LLMs = {
       default: {
         provider: "minimax",
-        model: "MiniMax-M2.7",
+        model: "MiniMax-M3",
         apiKey: asyncKey,
       },
     };
@@ -61,7 +61,7 @@ describe("MiniMax provider unit tests", () => {
     const llms: LLMs = {
       default: {
         provider: "minimax",
-        model: "MiniMax-M2.7",
+        model: "MiniMax-M3",
         apiKey: "test-key",
         config: {
           headers: { "X-Custom-Header": "value" },
@@ -77,7 +77,7 @@ describe("MiniMax provider unit tests", () => {
     const llms: LLMs = {
       default: {
         provider: "minimax",
-        model: "MiniMax-M2.7",
+        model: "MiniMax-M3",
         apiKey: "test-key",
         config: {
           name: "my-minimax",
@@ -91,7 +91,7 @@ describe("MiniMax provider unit tests", () => {
     const llms: LLMs = {
       default: {
         provider: "minimax",
-        model: "MiniMax-M2.7",
+        model: "MiniMax-M3",
         apiKey: "test-key",
         options: {
           temperature: 0.5,
@@ -101,21 +101,21 @@ describe("MiniMax provider unit tests", () => {
     expect(llms.default.options?.temperature).toBe(0.5);
   });
 
-  test("MiniMax M2.7 and M2.5-highspeed model configs", () => {
+  test("MiniMax M3 and M2.7-highspeed model configs", () => {
     const llms: LLMs = {
       default: {
         provider: "minimax",
-        model: "MiniMax-M2.7",
+        model: "MiniMax-M3",
         apiKey: "test-key",
       },
       fast: {
         provider: "minimax",
-        model: "MiniMax-M2.5-highspeed",
+        model: "MiniMax-M2.7-highspeed",
         apiKey: "test-key",
       },
     };
-    expect(llms.default.model).toBe("MiniMax-M2.7");
-    expect(llms.fast.model).toBe("MiniMax-M2.5-highspeed");
+    expect(llms.default.model).toBe("MiniMax-M3");
+    expect(llms.fast.model).toBe("MiniMax-M2.7-highspeed");
   });
 
   test("MiniMax provider alongside other providers", () => {
@@ -127,7 +127,7 @@ describe("MiniMax provider unit tests", () => {
       },
       minimax: {
         provider: "minimax",
-        model: "MiniMax-M2.7",
+        model: "MiniMax-M3",
         apiKey: "minimax-key",
       },
       claude: {
@@ -161,7 +161,7 @@ describeIntegration("MiniMax provider integration tests", () => {
   const llms: LLMs = {
     default: {
       provider: "minimax",
-      model: "MiniMax-M2.5-highspeed",
+      model: "MiniMax-M3",
       apiKey: apiKey!,
     },
   };
